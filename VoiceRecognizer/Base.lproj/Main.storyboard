@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VoiceRecognizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="w1L-co-tab">
+                                <rect key="frame" x="16" y="28" width="343" height="272"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Configura el tiempo de grabación arrastrando el slider. Pulsa el botón y podrás hablarle a tu iPhone para que transcriba tu voz a texto.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mll-AA-es9">
+                                <rect key="frame" x="162" y="577" width="50" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="hJg-iF-7Ob"/>
+                                    <constraint firstAttribute="height" constant="50" id="m98-Ka-1XB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="REC">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ArY-6E-cU9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28g-En-h9g">
+                                <rect key="frame" x="16" y="448" width="343" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="DbL-y9-haH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="58"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="bhU-MB-DV1">
+                                <rect key="frame" x="177" y="592" width="20" height="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="GyK-Km-CET">
+                                <rect key="frame" x="48" y="340" width="279" height="31"/>
+                                <connections>
+                                    <action selector="changeSliderTimeValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="ag8-sB-XNg"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="w1L-co-tab" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="2CD-pH-gep"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mll-AA-es9" secondAttribute="bottom" constant="40" id="Alq-1C-ZpO"/>
+                            <constraint firstItem="GyK-Km-CET" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="Ppd-H4-bZ5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="w1L-co-tab" secondAttribute="bottom" constant="367" id="TEu-sP-26S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w1L-co-tab" secondAttribute="trailing" id="Zdk-WY-APg"/>
+                            <constraint firstItem="w1L-co-tab" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="a8Y-HZ-ssb"/>
+                            <constraint firstAttribute="trailing" secondItem="GyK-Km-CET" secondAttribute="trailing" constant="50" id="aoz-1Z-arQ"/>
+                            <constraint firstItem="bhU-MB-DV1" firstAttribute="centerX" secondItem="Mll-AA-es9" secondAttribute="centerX" id="fO0-Fg-8gW"/>
+                            <constraint firstItem="bhU-MB-DV1" firstAttribute="centerY" secondItem="Mll-AA-es9" secondAttribute="centerY" id="iFq-cU-Waz"/>
+                            <constraint firstItem="28g-En-h9g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="l3v-In-pmH"/>
+                            <constraint firstItem="28g-En-h9g" firstAttribute="top" secondItem="GyK-Km-CET" secondAttribute="bottom" constant="78" id="qkD-PS-Kou"/>
+                            <constraint firstItem="GyK-Km-CET" firstAttribute="top" secondItem="w1L-co-tab" secondAttribute="bottom" constant="40" id="rzv-1N-ddg"/>
+                            <constraint firstItem="Mll-AA-es9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tsf-VG-XsK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="28g-En-h9g" secondAttribute="trailing" id="zf4-bE-IwF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityRecord" destination="bhU-MB-DV1" id="dJC-Vr-VkQ"/>
+                        <outlet property="btnRec" destination="Mll-AA-es9" id="VxO-V8-YyY"/>
+                        <outlet property="lblTimer" destination="28g-En-h9g" id="tZd-2b-KRF"/>
+                        <outlet property="textView" destination="w1L-co-tab" id="tcc-jJ-m1N"/>
+                        <outlet property="timeSlider" destination="GyK-Km-CET" id="532-PU-wPz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+        </scene>
+    </scenes>
+</document>
